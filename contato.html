@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home</title>
+    <link rel="stylesheet" href="CSS.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="menu">
+          <li><img class="logo" src="Imagens/logo.png" alt="" /></li>
+          <li><a class="botao" href="home.html">Home</a></li>
+          <li><a class="botao" href="sobre.html">Sobre</a></li>
+          <li><a class="botao" href="galeria.html">Galeria</a></li>
+          <li><a class="botao" href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!--Formulario-->
+    <section style="margin-bottom: 40px" id="contato">
+      <img class="banner" src="Imagens/banner.png" alt="" />
+
+      <h2 class="title">Entre em Contato</h2>
+      <form class="form" id="contact-form" action="#" method="POST">
+        <div class="form-division">
+          <div class="form-label-input">
+            <label for="nome">Nome:</label>
+            <input class="input" type="text" id="nome" name="nome" required />
+          </div>
+          <div class="form-label-input">
+            <label for="email">Email:</label>
+            <input class="input" type="email" id="email" name="email" required />
+          </div>
+          <div class="form-label-input">
+            <label for="cep">CEP:</label>
+            <input class="input" type="text" id="cep" name="cep" required />
+          </div>
+        </div>
+        <div class="form-division">
+          <div class="form-label-input">
+            <label for="endereco">Endereço:</label>
+            <input class="input" type="text" id="endereco" name="endereco" required />
+          </div>
+
+          <div class="form-label-input">
+            <label for="genero">Gênero:</label>
+            <select class="input" id="genero" name="genero" required>
+              <option value="masculino">Masculino</option>
+              <option value="feminino">Feminino</option>
+              <option value="outro">Outro</option>
+            </select>
+          </div>
+
+          <div class="form-label-input">
+            <label for="telefone">Telefone:</label>
+            <input class="input" type="text" id="telefone" name="telefone" required />
+          </div>
+        </div>
+
+        <button class="botao-form" type="submit" value="Enviar">Enviar</button>
+      </form>
+    </section>
+
+    <footer class="footer">
+      <p>(11) 4227-7816</p>
+      <p>
+        Endereço: R. Conceição, 321 - Santo Antônio, São Caetano do Sul - SP,
+        09530-060
+      </p>
+    </footer>
+    <script>
+      // Adiciona um evento de escuta para o envio do formulário
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Impede o envio padrão do formulário
+
+          // Recupera os valores dos campos
+          var nome = document.getElementById("nome").value;
+          var email = document.getElementById("email").value;
+          var cep = document.getElementById("cep").value;
+          var endereco = document.getElementById("endereco").value;
+          var genero = document.getElementById("genero").value;
+          var telefone = document.getElementById("telefone").value;
+
+          // Aqui você pode realizar o processamento dos dados do formulário
+          // por exemplo, enviá-los para um servidor via Ajax ou realizar alguma validação
+
+          // Exemplo de exibição dos valores em um alerta
+          alert(
+            "Valores do formulário:\n\nNome: " +
+              nome +
+              "\nEmail: " +
+              email +
+              "\nCEP: " +
+              cep +
+              "\nEndereço: " +
+              endereco +
+              "\nGênero: " +
+              genero +
+              "\nTelefone: " +
+              telefone
+          );
+
+          // Após o processamento, você pode redirecionar o usuário para outra página, se necessário
+          // window.location.href = 'outra_pagina.html';
+        });
+    </script>
+  </body>
+</html>
